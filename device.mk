@@ -22,10 +22,12 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 # Screen density
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Boot animation
@@ -81,14 +83,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     calmodule.cfg \
     libcalmodule_akm.so \
-    libcalmodule_common
+    libcalmodule_common \
+    sensors.msm8916
 
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.lettuce.diag.rc \
-    init.target.rc \
-    init.qcom.usb.rc \
-    ueventd.qcom.rc
+    init.target.rc
 
 # Recovery
 PRODUCT_EXTRA_RECOVERY_KEYS += \
