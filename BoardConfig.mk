@@ -73,6 +73,3 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # inherit from the proprietary version
 -include vendor/yu/lettuce/BoardConfigVendor.mk
-
-TARGET_CPU_CORTEX_A53 := true 
-TARGET_GCC_VERSION_EXP := 4.9
