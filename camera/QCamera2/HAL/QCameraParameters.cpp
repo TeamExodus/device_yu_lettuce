@@ -5893,7 +5893,7 @@ int32_t QCameraParameters::setFaceRecognition(const char *faceRecog,
  *==========================================================================*/
 int32_t QCameraParameters::setZoom(int zoom_level)
 {
-    int val_lenght = 16;
+    int val_length = 16;
     char val[val_length];
     snprintf(val, val_length, "%d", zoom_level);
     updateParamEntry(KEY_ZOOM, val);
