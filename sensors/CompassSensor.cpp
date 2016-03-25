@@ -144,8 +144,9 @@ int CompassSensor::setDelay(int32_t, int64_t delay_ns)
 			SYSFS_POLL_DELAY, SYSFS_MAXLEN);
 	fd = open(input_sysfs_path, O_RDWR);
 	if (fd >= 0) {
-		char buf[80];
-		sprintf(buf, "%d", delay_ms);
+        int buf_length = 80;
+		char buf[buf_length];
+		snprintf(buf, buf_length, "%d", delay_ms);
 		write(fd, buf, strlen(buf)+1);
 		close(fd);
 		return 0;

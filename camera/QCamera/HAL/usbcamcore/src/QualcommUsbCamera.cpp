@@ -2326,7 +2326,7 @@ static int get_uvc_device(char *devname)
     while(1){
         uvc_xu_control_query    xqry;
 
-        sprintf(temp_devname, "/dev/video%d", i);
+        snprintf(temp_devname, FILENAME_LENGTH,"/dev/video%d", i);
         ALOGD("%s: Probing %s \n", __func__, temp_devname);
 
         fd = open(temp_devname, O_RDWR /* required */ | O_NONBLOCK, 0);

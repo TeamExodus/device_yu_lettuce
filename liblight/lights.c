@@ -74,8 +74,9 @@ write_string(const char *path, const char *buffer)
 static int
 write_int(const char *path, int value)
 {
-    char buffer[20];
-    sprintf(buffer, "%d\n", value);
+    int buf_length = 20;
+    char buffer[buf_length];
+    snprintf(buffer, buf_length, "%d\n", value);
     return write_string(path, buffer);
 }
 
