@@ -1,0 +1,12 @@
+[
+  {
+    "repository": "device_cyanogen_msm8916-common",
+    "target_path": "device/cyanogen/msm8916-common"
+  },{
+    "repository": "kernel_cyanogen_msm8916",
+    "target_path": "kernel/cyanogen/msm8916"
+  },{
+    "repository": "vendor_yu_lettuce",
+    "target_path": "vendor/yu/lettuce"
+  }
+]
