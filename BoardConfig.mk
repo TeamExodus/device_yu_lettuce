@@ -13,6 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+#Trun off DexPreOpt
+WITH_DEXPREOPT := false
+
 include device/cyanogen/msm8916-common/BoardConfigCommon.mk
 
 include device/yu/lettuce/board/*.mk
