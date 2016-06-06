@@ -6,5 +6,9 @@
   {
     "repository": "kernel_cyanogen_msm8916-lettuce",
     "target_path": "kernel/cyanogen/msm8916-lettuce"
+  },
+  {
+    "repository": "vendor_yu_lettuce",
+    "target_path": "vendor/yu/lettuce"
   }
 ]
