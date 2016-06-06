@@ -4,7 +4,7 @@
     "target_path": "device/cyanogen/msm8916-common"
   },
   {
-    "repository": "kernel_cyanogen_msm8916",
-    "target_path": "kernel/cyanogen/msm8916",
+    "repository": "kernel_cyanogen_msm8916-lettuce",
+    "target_path": "kernel/cyanogen/msm8916-lettuce",
   }
 ]
