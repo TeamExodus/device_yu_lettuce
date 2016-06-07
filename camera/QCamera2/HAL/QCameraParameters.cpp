@@ -1322,7 +1322,7 @@ int32_t QCameraParameters::setPictureSize(const QCameraParameters& params)
 
             // set the new value
             char val[32];
-            sprintf(val, "%dx%d", width, height);
+            snprintf(val, sizeof(val), "%dx%d", width, height);
             CDBG_HIGH("%s: picture size requested %s", __func__, val);
             updateParamEntry(KEY_PICTURE_SIZE, val);
             return NO_ERROR;
@@ -5433,7 +5433,7 @@ int32_t QCameraParameters::setEffect(const char *effect)
 int32_t QCameraParameters::setBrightness(int brightness)
 {
     char val[16];
-    sprintf(val, "%d", brightness);
+    snprintf(val, sizeof(val), "%d", brightness);
     updateParamEntry(KEY_QC_BRIGHTNESS, val);
 
     int32_t value = brightness;
@@ -5605,7 +5605,7 @@ void  QCameraParameters::updateCurrentFocusPosition(cam_focus_pos_info_t &cur_po
 int32_t QCameraParameters::setSharpness(int sharpness)
 {
     char val[16];
-    sprintf(val, "%d", sharpness);
+    snprintf(val, sizeof(val), "%d", sharpness);
     updateParamEntry(KEY_QC_SHARPNESS, val);
     CDBG("%s: Setting sharpness %s", __func__, val);
 
