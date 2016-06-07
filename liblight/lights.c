@@ -75,7 +75,7 @@ static int
 write_int(const char *path, int value)
 {
     char buffer[20];
-    sprintf(buffer, "%d\n", value);
+    snprintf(buffer, sizeof(buffer),"%d\n", value);
     return write_string(path, buffer);
 }
 

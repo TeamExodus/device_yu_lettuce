@@ -212,7 +212,7 @@ int usbCamInitDefaultParameters(camera_hardware_t *camHal)
         camHal->qCamParams.setPictureFormat(QCameraParameters::PIXEL_FORMAT_JPEG);
 
     //Set picture quality
-    sprintf(tempStr, "%d", camHal->pictJpegQlty);
+    snprintf(tempStr, sizeof(tempStr), "%d", camHal->pictJpegQlty);
     camHal->qCamParams.set(QCameraParameters::KEY_JPEG_QUALITY, tempStr);
 
     //Set Thumbnail size
@@ -220,15 +220,15 @@ int usbCamInitDefaultParameters(camera_hardware_t *camHal)
         thumbnail_sizes, sizeof(thumbnail_sizes) /sizeof(camera_size_type));
     camHal->qCamParams.set(QCameraParameters::KEY_SUPPORTED_JPEG_THUMBNAIL_SIZES,
                     camHal->thumbnailSizeValues.string());
-    sprintf(tempStr, "%d", camHal->thumbnailWidth);
+    snprintf(tempStr,  sizeof(tempStr),"%d", camHal->thumbnailWidth);
     camHal->qCamParams.set(QCameraParameters::KEY_JPEG_THUMBNAIL_WIDTH,
                                                 tempStr);
-    sprintf(tempStr, "%d", camHal->thumbnailHeight);
+    snprintf(tempStr,  sizeof(tempStr),"%d", camHal->thumbnailHeight);
     camHal->qCamParams.set(QCameraParameters::KEY_JPEG_THUMBNAIL_HEIGHT,
                                                 tempStr);
 
     //Set Thumbnail quality
-    sprintf(tempStr, "%d", camHal->thumbnailJpegQlty);
+    snprintf(tempStr,  sizeof(tempStr), "%d", camHal->thumbnailJpegQlty);
     camHal->qCamParams.set(QCameraParameters::KEY_JPEG_THUMBNAIL_QUALITY,
                                                 tempStr);
 
@@ -609,10 +609,10 @@ static int usbCamSetThumbnailSize(  camera_hardware_t           *camHal,
 
             camHal->thumbnailWidth   = width;
             camHal->thumbnailHeight  = height;
-            sprintf(tempStr, "%d", camHal->thumbnailWidth);
+            snprintf(tempStr,  sizeof(tempStr), "%d", camHal->thumbnailWidth);
             camHal->qCamParams.set(QCameraParameters::KEY_JPEG_THUMBNAIL_WIDTH,
                                                         width);
-            sprintf(tempStr, "%d", camHal->thumbnailHeight);
+            snprintf(tempStr,  sizeof(tempStr), "%d", camHal->thumbnailHeight);
             camHal->qCamParams.set(QCameraParameters::KEY_JPEG_THUMBNAIL_HEIGHT,
                                                         height);
 
@@ -655,7 +655,7 @@ static int usbCamSetJpegQlty(   camera_hardware_t           *camHal,
 
     if (quality >= 0 && quality <= 100) {
         camHal->pictJpegQlty = quality;
-        sprintf(tempStr, "%d", camHal->pictJpegQlty);
+        snprintf(tempStr,  sizeof(tempStr), "%d", camHal->pictJpegQlty);
         camHal->qCamParams.set(QCameraParameters::KEY_JPEG_QUALITY, quality);
     } else {
         ALOGE("Invalid jpeg quality=%d", quality);
@@ -667,7 +667,7 @@ static int usbCamSetJpegQlty(   camera_hardware_t           *camHal,
 
     if (quality >= 0 && quality <= 100) {
         camHal->thumbnailJpegQlty = quality;
-        sprintf(tempStr, "%d", camHal->thumbnailJpegQlty);
+        snprintf(tempStr, sizeof(tempStr), "%d", camHal->thumbnailJpegQlty);
         camHal->qCamParams.set(QCameraParameters::KEY_JPEG_THUMBNAIL_QUALITY,
                                     tempStr);
     } else {
